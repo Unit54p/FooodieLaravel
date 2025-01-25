@@ -1,0 +1,23 @@
+:root {
+    --primary-color: #0D6EFD;
+    --background-color: #2ecc71;
+    --font-color: #000000;
+    --secondaryFont-color: #FFFFFF;
+    --secondaryBackground-color: #E2DCD7;
+}
+
+body {
+    background-color: var(--secondaryBackground-color);
+}
+
+nav {
+    background-color: var(--primary-color);
+
+}
+
+li {
+    color: var(--secondaryFont-color);
+}
+div{
+    /* border: solid 1px black; */
+}

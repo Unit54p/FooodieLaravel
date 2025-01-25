@@ -1,0 +1,28 @@
+@import url('basic.css');
+
+:root {
+    --hero-height: 70vh;
+}
+
+.heroSection {
+    background-color: var(--secondaryFont-color);
+    height: var(--hero-height);
+    border-radius: 0 0 10px 10px;
+    margin: 0 2rem;
+    box-shadow: black 0 0 1px;
+    gap: 14rem;
+}
+
+.contentHeroSection {
+    /* 80 sisa 20 untuk sosmedNavHero */
+    gap: 20rem;
+    height: 80%;
+}
+.sosmedNavHero{
+    height: 20%;
+}
+.img_hero {
+    width: 20rem;
+    /* Mengatur tinggi otomatis untuk menjaga rasio gambar */
+    object-fit: contain;
+}
