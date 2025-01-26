@@ -36,7 +36,8 @@
 }
 
 .btn_keranjang {
-    border-radius: 8px;
+    border-radius: 5px;
+    width: 100%;
     background-color: var(--secondaryFont-color);
     color: var(--primary-color);
     padding: 10px 40px;
