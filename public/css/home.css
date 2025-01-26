@@ -47,3 +47,6 @@
     background-color: var(--primary-color);
     color: var(--secondaryFont-color);
 }
+.contenSection{
+    margin: 4rem 20% 0 20%;
+}

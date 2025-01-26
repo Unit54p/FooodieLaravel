@@ -12,12 +12,32 @@ body {
 
 nav {
     background-color: var(--primary-color);
-
 }
 
 li {
     color: var(--secondaryFont-color);
 }
-div{
+
+div {
     /* border: solid 1px black; */
+}
+
+.btn_primary {
+    background-color: var(--primary-color);
+    color: var(--secondaryFont-color);
+    border-radius: 5px;
+    padding: 10px 10px;
+    width: 10rem;
+}
+
+.custom-background {
+    /* Custom height */
+
+    /* URL gambar */
+    /* background-size: cover; */
+    /* Fit gambar agar menutupi div */
+    /* background-position: center; */
+    /* Memposisikan gambar di tengah */
+    /* background-repeat: repeat; */
+    /* Menghindari pengulangan gambar */
 }

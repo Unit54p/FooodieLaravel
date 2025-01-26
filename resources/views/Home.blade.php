@@ -8,7 +8,7 @@
 @endsection
 @section('body')
     <main>
-        <div class="heroSection">
+        <div class="heroSection ">
             <div class="contentHeroSection flex justify-center ">
                 <div class="flex align-middle justify-center  flex-col gap-1  ">
                     <span class="text-6xl">FIND YOUR <br>FOOOOOOOOD</span>
@@ -92,7 +92,31 @@
 
             </div>
         </div>
+        {{-- section hero2 --}}
+        <div class="contenSection  flex justify-between">
+            <div class="flex align-middle justify-center flex-col gap-2">
+                <span class="text-4xl">Take or Delivery</span>
+                <span>You can <strong>pick it up</strong> at our place or,<br>
+                    we can <strong>deliver it</strong> to your place</span>
+            </div>
+            <div>
+                <img src="{{ asset('img/deliver.png') }}" alt="">
+            </div>
+        </div>
+        {{-- section hero3 --}}
+        <div class="contenSection flex justify-between">
+            <div>
+                <img src="{{ asset('img/gmaps.png') }}" alt="">
+            </div>
+            <div class="flex align-middle justify-center flex-col text-end gap-2">
+                <span class="text-4xl">About our place</span>
+                <span>South park, heliysa alika, no 99</span>
+                <div class="flex justify-end ">
+                    <button class="btn_primary">Google Maps</button>
+                </div>
+            </div>
 
+        </div>
     </main>
 @endsection
 @section('footer')
