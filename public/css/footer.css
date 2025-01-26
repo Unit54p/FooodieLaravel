@@ -1,0 +1,18 @@
+@import url('css/basic.css');
+
+:root {
+    --height-root: 366px;
+}
+
+.Classfooter {}
+
+.contentFooter {
+    background-color: var(--primary-color);
+    color: var(--secondaryFont-color);
+    height: var(--height-root);
+    margin: 100px 0 0 0;
+    border-radius: 20px 20px 0 0;
+    width: 70%;
+    gap: 25rem;
+    height: var(--height-root);
+}

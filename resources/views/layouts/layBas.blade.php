@@ -8,6 +8,7 @@
     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="{{ asset('css/basic.css') }}">
     <title>@yield('title', 'Foooooodie')</title>
+    <link rel="stylesheet" href="{{ asset('css/footer.css') }}">
 </head>
 
 <body>
