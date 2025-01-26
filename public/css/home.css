@@ -18,11 +18,31 @@
     gap: 20rem;
     height: 80%;
 }
-.sosmedNavHero{
+
+.sosmedNavHero {
     height: 20%;
 }
+
 .img_hero {
     width: 20rem;
     /* Mengatur tinggi otomatis untuk menjaga rasio gambar */
     object-fit: contain;
+}
+
+
+
+.card {
+    width: 300px;
+}
+
+.btn_keranjang {
+    border-radius: 8px;
+    background-color: var(--secondaryFont-color);
+    color: var(--primary-color);
+    padding: 10px 40px;
+}
+
+.cardCaption {
+    background-color: var(--primary-color);
+    color: var(--secondaryFont-color);
 }
