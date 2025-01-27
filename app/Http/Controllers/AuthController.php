@@ -4,39 +4,53 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+
 class AuthController extends Controller
 {
+    // Menampilkan halaman login
     public function showLoginForm()
     {
+        // Mengembalikan tampilan 'login' yang berisi form login
         return view('login');
     }
 
-    // Memproses login
+    // Memproses login setelah form dikirimkan
     public function processLogin(Request $request)
     {
+        // Melakukan validasi input email dan password
         $request->validate([
-            'email' => 'required|email',
-            'password' => 'required|min:6',
+            'email' => 'required|email', // Email wajib diisi dan harus dalam format yang benar
+            'password' => 'required|min:6', // Password wajib diisi dan minimal 6 karakter
         ]);
 
+        // Mencoba login dengan menggunakan email dan password yang diberikan
         if (Auth::attempt($request->only('email', 'password'))) {
-            $request->session()->regenerate(); // Hindari session fixation
-            return redirect()->intended('/Home'); // Arahkan ke Home atau halaman lain
+            // Jika login berhasil, regenerasi sesi untuk menghindari session fixation (keamanan)
+            $request->session()->regenerate();
+
+            // Setelah login berhasil, arahkan pengguna ke halaman yang mereka tuju sebelumnya (atau ke halaman Home)
+            return redirect()->intended('/Home');
         }
 
+        // Jika login gagal, kembalikan ke halaman login dengan pesan kesalahan
         return back()->withErrors([
-            'email' => 'Email atau password salah.',
+            'email' => 'Email atau password salah.', // Menampilkan pesan kesalahan untuk email atau password yang salah
         ]);
     }
 
-    // Logout
+    // Memproses logout
     public function logout(Request $request)
     {
+        // Menghapus informasi autentikasi pengguna
         Auth::logout();
 
+        // Menghapus seluruh data sesi pengguna
         $request->session()->invalidate();
+
+        // Menghasilkan token CSRF baru untuk mencegah serangan CSRF setelah logout
         $request->session()->regenerateToken();
 
+        // Mengarahkan pengguna kembali ke halaman login setelah logout
         return redirect('/login');
     }
 }
