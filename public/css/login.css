@@ -1,0 +1,33 @@
+@import url('basic.css');
+
+body{
+    background-color: white !important;
+}
+.inpt_field {
+    border: solid 1px var(--input-border-color) !important;
+    border-radius: 5px;
+    padding: 10px 10px;
+}
+.container_login_form{
+    height: 100vh;
+}
+
+.firstPart {
+    background-color: var(--primary-color);
+    color: white;
+    width: 50%;
+}
+.textFirstPart{
+    position: relative;
+    top: 40%;
+    left: 10%;
+}
+
+.secondPart {
+    position: relative;
+    top: 35%;
+    width: 50%;
+}
+.containerContentLogin{
+    width: 85%;
+}
