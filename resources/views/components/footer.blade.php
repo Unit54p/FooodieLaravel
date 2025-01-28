@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="{{ asset('css/footer.css') }}">
 <footer class="Classfooter flex justify-center">
     <div class="contentFooter flex justify-center items-center ">
         <div class="">
@@ -6,7 +7,7 @@
             <div class="contact-info">
                 <p><span>Call us</span> : +62 999-999-999</p>
                 <p><span>Instagram</span> : @foodtivity_</p>
-                <p><span>Email</span> : foodtivity@gmail.com</p>
+                <p><span>Email</span> : fooodie@gmail.com</p>
             </div>
         </div>
         <div class="">

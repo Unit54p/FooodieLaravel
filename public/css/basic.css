@@ -19,7 +19,7 @@ li {
     color: var(--secondaryFont-color);
 }
 
-div {
+div span footer nav table tr td{
     /* border: solid 1px black; */
 }
 

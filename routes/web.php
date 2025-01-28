@@ -45,3 +45,6 @@ Route::get('/Home', [ProductController::class, 'showHome'])->middleware('auth')-
     - Nama route `home` digunakan untuk merujuk ke URL ini dengan lebih mudah, seperti saat membuat link ke halaman home setelah login.
 */
 
+Route::get('/about', function () {
+return view('AboutUs');
+});
