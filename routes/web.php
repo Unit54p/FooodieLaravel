@@ -50,6 +50,10 @@ Route::get('/about', function () {
     return view('AboutUs');
 });
 
+Route::get('/Admin', function () {
+    return view('Admin.adminHome');
+});
+
 Route::get('/apps', function () {
     return view('apps');
 });
