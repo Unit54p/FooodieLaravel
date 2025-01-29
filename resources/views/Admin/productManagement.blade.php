@@ -6,7 +6,6 @@
 @endsection
 
 @section('body')
-home
+product management
 @endsection
-
 

@@ -1,0 +1,15 @@
+   .navLi {
+       padding: 6px 8px;
+       transition: 0.2s ease;
+       border-radius: 8px;
+   }
+
+   .active {
+       background-color: white;
+       color: var(--primary-color);
+   }
+
+   .navLi:hover {
+       background-color: white;
+       color: var(--primary-color);
+   }

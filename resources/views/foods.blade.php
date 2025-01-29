@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="css/navbar.css">
+
 @extends('layouts/layBas')
 @section('title', 'Fooodie About Us')
 

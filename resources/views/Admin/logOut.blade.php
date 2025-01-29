@@ -6,7 +6,6 @@
 @endsection
 
 @section('body')
-home
+log out
 @endsection
-
 

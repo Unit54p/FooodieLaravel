@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="{{ asset('css/AboutUs.css') }}">
 <nav class="px-10 py-5">
-    <ul class="flex justify-start gap-8">
+    <ul class="flex justify-start gap-3">
         <li class="navLi {{ Request::is('Home') ? 'active' : '' }}"> <a href="/Home">Home</a></li>
         <li class="navLi {{ Request::is('foods') ? 'active' : '' }}"> <a href="/foods">Foods</li>
 

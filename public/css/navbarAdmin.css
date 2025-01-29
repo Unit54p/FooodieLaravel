@@ -2,5 +2,13 @@
 
 nav {
     background-color: var(--primary-color);
+}
+.navLi{
     
+}
+
+.btn_logOut {
+    background-color: #D93131;
+    padding: 8px 10px;
+    border-radius: 4px;
 }

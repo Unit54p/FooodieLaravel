@@ -50,10 +50,24 @@ Route::get('/about', function () {
     return view('AboutUs');
 });
 
-Route::get('/Admin', function () {
-    return view('Admin.adminHome');
-});
 
 Route::get('/apps', function () {
     return view('apps');
+});
+
+/*
+****** Router Admin ******
+*/
+
+Route::get('/Admin', function () {
+    return view('Admin.adminHome');
+});
+Route::get('/productManagement', function () {
+    return view('Admin.productManagement');
+});
+Route::get('/userManagement', function () {
+    return view('Admin.userManagement');
+});
+Route::get('/logOut', function () {
+    return view('Admin.logOut');
 });
