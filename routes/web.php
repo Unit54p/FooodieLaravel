@@ -35,8 +35,9 @@ Route::post('/login', [AuthController::class, 'processLogin'])->name('login.proc
 */
 
 // Route untuk halaman Home setelah login (halaman ini hanya bisa diakses jika sudah login)
-Route::get('/Home', [ProductController::class, 'showHome'])->middleware('auth')->name('home');
-
+Route::get('/Home', [ProductController::class, 'showProducts'])->middleware('auth')->name('home');
+Route::get('/foods', [ProductController::class, 'showFoods'])->middleware('auth')->name('foods');
+Route::get('/drinks', [ProductController::class, 'showDrinks'])->middleware('auth')->name('drinks');
 /*
     - Route ini menangani URL '/Home', yang akan memanggil metode `showHome` dari `ProductController`.
     - Metode `showHome` akan menampilkan halaman home dan menampilkan produk atau data terkait dari database.
@@ -46,5 +47,9 @@ Route::get('/Home', [ProductController::class, 'showHome'])->middleware('auth')-
 */
 
 Route::get('/about', function () {
-return view('AboutUs');
+    return view('AboutUs');
+});
+
+Route::get('/apps', function () {
+    return view('apps');
 });

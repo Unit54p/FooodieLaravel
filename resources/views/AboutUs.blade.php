@@ -10,7 +10,7 @@
     <div class="mainContainer  flex justify-center flex-col">
         <span class="text-center text-4xl my-4">Contact</span>
         <div class="flex justify-center">
-            <table class=" ">
+            1 <table class=" ">
                 <tr>
                     <td>Contact Number</td>
                     <td class="px-3">:</td>
