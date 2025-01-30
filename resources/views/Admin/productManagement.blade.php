@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="{{ asset('css/basic.css') }}">
 @extends('layouts/layBas')
 @section('title', 'Admin Home')
 
@@ -6,10 +7,10 @@
 @endsection
 
 @section('body')
-<div>
-    <div class="ms-5 my-5">
+<div class="mx-6">
+    <div class=" my-6 flex justify-between">
         <span class="text-3xl">product management</span>
-        <button><a href="/addProduct">Add product</a></button>
+        <a href="/addProduct" class="btn_primary">Add product</a>
     </div>
 
     <table class="min-w-full table-auto border-collapse border border-gray-200">

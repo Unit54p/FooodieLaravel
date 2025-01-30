@@ -19,7 +19,7 @@ li {
     color: var(--secondaryFont-color);
 }
 
-div span footer nav table tr td{
+div span footer nav table tr td {
     /* border: solid 1px black; */
 }
 
@@ -28,17 +28,19 @@ div span footer nav table tr td{
     color: var(--secondaryFont-color);
     border-radius: 5px;
     padding: 10px 10px;
-    width: 10rem;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.1s, color 0.3s;
 }
 
-.custom-background {
-    /* Custom height */
+.btn_primary:hover {
+    background-color: var(--secondaryFont-color);
+    color: var(--primary-color);
+}
 
-    /* URL gambar */
-    /* background-size: cover; */
-    /* Fit gambar agar menutupi div */
-    /* background-position: center; */
-    /* Memposisikan gambar di tengah */
-    /* background-repeat: repeat; */
-    /* Menghindari pengulangan gambar */
+.btn_primary:focus {
+    background-color: gray;
+    /* Warna abu-abu saat focus */
+    color: var(--secondaryFont-color);
+    /* Warna font biru saat focus */
 }

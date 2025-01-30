@@ -20,6 +20,12 @@ class ProductController extends Controller
 
         return view('Admin.productManagement', compact('products'));
     }
+    public function dashboardData()
+    {
+        $products = Product::all(); // Ambil data produk
+
+        return view('Admin.homeAdmin', compact('products'));
+    }
     // contoh class fungsi untuk routing dengan controller
     // public function logOut()
     // {

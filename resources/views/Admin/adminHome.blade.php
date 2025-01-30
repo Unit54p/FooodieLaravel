@@ -6,7 +6,10 @@
 @endsection
 
 @section('body')
-home
+<main>
+<div class="card_dashboard"></div>
+<div class="card_dashboard"></div>
+<div class="card_dashboard"></div>
+<div class="card_dashboard"></div>
+</main>
 @endsection
-
-

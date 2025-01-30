@@ -7,8 +7,8 @@
 
 @section('body')
 <div class="mx-5">
-    <form action="{{ route('saveProduct') }}" method="POST">
-
+    <form action="{{ route('saveProduct') }}" method="POST" enctype="multipart/form-data">
+        {{-- enctype="multipart/form-data" bagian ini memungkinkan untuk proses mengunggah file --}}
 
         @csrf
         <div class="mx-5">
@@ -33,7 +33,12 @@
                     <tr class="odd:bg-gray-100 even:bg-white hover:bg-gray-50">
                         <td class="px-4 py-2 border border-gray-300">Type</td>
                         <td class="px-4 py-2 border border-gray-300">
-                            <input type="text" name="type" class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter type">
+                            <select name="type" id="" class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
+
+                                <option value="food">food</option>
+                                <option value="drink">drink</option>
+                            </select>
+
                         </td>
                     </tr>
                     <tr class="odd:bg-gray-100 even:bg-white hover:bg-gray-50">
@@ -48,11 +53,25 @@
                             <input type="number" name="rating" step="0.1" max="5" class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter rate">
                         </td>
                     </tr>
+                    <tr class="odd:bg-gray-100 even:bg-white hover:bg-gray-50">
+                        <td class="px-4 py-2 border border-gray-300">Image Name</td>
+                        <td class="px-4 py-2 border border-gray-300">
+                            <input type="text" name="image_name" class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter image name">
+                        </td>
+                    </tr>
+
+                    <tr class="odd:bg-gray-100 even:bg-white hover:bg-gray-50">
+                        <td class="px-4 py-2 border border-gray-300">Upload Image</td>
+                        <td class="px-4 py-2 border border-gray-300">
+                            <input type="file" name="image" class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </td>
+                    </tr>
+
                 </tbody>
             </table>
 
             <div class="flex justify-end mt-4">
-                <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded">Add</button>
+                <button type="submit" class="btn_primary">Add</button>
             </div>
         </div>
     </form>
