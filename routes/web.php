@@ -49,7 +49,8 @@ Route::get('/drinks', [ProductController::class, 'showDrinks'])->middleware('aut
 Route::get('/about', function () {
     return view('AboutUs');
 });
-
+// memuat routing dengan memanggil class function di controller
+// Route::get('/logOut', [AdminController::class, 'logOut']);
 
 Route::get('/apps', function () {
     return view('apps');
@@ -62,9 +63,11 @@ Route::get('/apps', function () {
 Route::get('/Admin', function () {
     return view('Admin.adminHome');
 });
-Route::get('/productManagement', function () {
-    return view('Admin.productManagement');
-});
+// Route::get('/productManagement', function () {
+//     return view('Admin.productManagement');
+// });
+Route::get('/productManagement', [ProductController::class, 'productManagement'])->middleware('auth')->name('Admin.productManagement');
+
 Route::get('/userManagement', function () {
     return view('Admin.userManagement');
 });

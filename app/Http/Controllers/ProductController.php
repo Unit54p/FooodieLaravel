@@ -14,9 +14,23 @@ class ProductController extends Controller
             'drinkProducts' => Product::where('type', 'drink')->get(),
         ];
     }
+    public function productManagement()
+    {
+        $products = Product::all(); // Ambil data produk
+
+        return view('Admin.productManagement', compact('products'));
+    }
+    // contoh class fungsi untuk routing dengan controller
+    // public function logOut()
+    // {
+    //     return view('Admin.logOut');
+    // }
+
     public function showProducts()
     {
-        return view('home', $this->getProducts());
+        $products = $this->getProducts(); // Ambil data produk
+
+        return view('home', $products);
         // untuk satu panggilan tanpa pembeda
         // Ambil semua data produk dari database
         // $products = Product::where('type', 'drink')->get();
