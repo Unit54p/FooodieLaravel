@@ -8,6 +8,8 @@
 // });
 
 // Route::get('/', [ProductController::class, 'showHome']);
+
+use App\Http\Controllers\addProductController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ProductController;
@@ -71,6 +73,17 @@ Route::get('/productManagement', [ProductController::class, 'productManagement']
 Route::get('/userManagement', function () {
     return view('Admin.userManagement');
 });
+
 Route::get('/logOut', function () {
     return view('Admin.logOut');
 });
+
+Route::get('/addProduct', function () {
+    return view('Admin.addProduct'); // Pastikan view ada di resources/views/Admin/addProduct.blade.php
+})->name('addProduct');
+
+
+// Route::get('santri/tampil', [SantriController::class, 'tampilsantri'])->name('tampilsantri')->middleware('auth');
+// Route::get('santri/tambah', [SantriController::class, 'tambahsantri'])->name('tambahsantri')->middleware('auth');
+// Route::post('/saveProdcut', [addProductController::class, 'saveProduct'])->name('saveProduct')->middleware('auth');
+Route::post('/saveProduct', [addProductController::class, 'saveProduct'])->name('saveProduct')->middleware('auth');

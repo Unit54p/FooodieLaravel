@@ -9,7 +9,9 @@
 <div>
     <div class="ms-5 my-5">
         <span class="text-3xl">product management</span>
+        <button><a href="/addProduct">Add product</a></button>
     </div>
+
     <table class="min-w-full table-auto border-collapse border border-gray-200">
         <thead>
             <tr class="bg-gray-100">

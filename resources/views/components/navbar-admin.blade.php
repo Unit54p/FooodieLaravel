@@ -9,9 +9,7 @@
             <li class="navLi {{ Request::is('productManagement') ? 'active' : '' }}">
                 <a href="/productManagement">Product Management</a>
             </li>
-            <li class="navLi {{ Request::is('userManagement') ? 'active' : '' }}">
-                <a href="/userManagement">User Management</a>
-            </li>
+            
         </div>
         <div>
             <li class="navLi btn_logOut {{ Request::is('logOut') ? 'active' : '' }}">
