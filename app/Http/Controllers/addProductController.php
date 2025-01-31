@@ -8,23 +8,6 @@ use Illuminate\Routing\Controller;
 
 class addProductController extends Controller
 {
-    // public function addProduct(Request $request)
-    // {
-    //     // Validasi data yang masuk
-    //     $validated = $request->validate([
-    //         'name' => 'required|string|max:255',
-    //         'type' => 'required|string|max:255',
-    //         'price' => 'required|numeric|min:0',
-    //         'rating' => 'required|numeric|min:0|max:5',
-    //     ]);
-
-    //     // Menyimpan data ke database
-    //     Product::create($validated);
-
-    //     // Redirect atau tampilkan pesan sukses
-    //     return redirect()->route('home')->with('success', 'Product added successfully!');
-    // }
-
     public function saveProduct(Request $request)
     {
         // cara 1
@@ -62,10 +45,12 @@ class addProductController extends Controller
 
         $imagePath = $request->file('image')->getClientOriginalName();  // Nama asli file gambar
         $destinationPath = public_path('img');  // Path tujuan: public/img
-
+        /*
+        memindahkan gambar ke folder public/img
+        $destinationPath sebagai path (public) dan $imagePath sebagai nama image
+        */
         $request->file('image')->move($destinationPath, $imagePath);
 
-        // Masukkan data ke database, termasuk path gambar
         /*
         dengan cara ini kita bisa menentukan
         sendiri untuk kolom (objek sebelum tanda =>)
@@ -82,4 +67,6 @@ class addProductController extends Controller
         // Redirect ke halaman addProduct setelah berhasil menyimpan produk
         return redirect()->route('addProduct')->with('success', 'Product added successfully!');
     }
+
+    
 }

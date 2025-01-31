@@ -16,7 +16,7 @@
     <table class="min-w-full table-auto border-collapse border border-gray-200">
         <thead>
             <tr class="bg-gray-100">
-                <th class="px-4 py-2 border border-gray-300 text-left">No</th>
+                <th class="text-center border border-gray-300 ">No</th>
                 <th class="px-4 py-2 border border-gray-300 text-left">Name</th>
                 <th class="px-4 py-2 border border-gray-300 text-left">Price</th>
                 <th class="px-4 py-2 border border-gray-300 text-left">Rate</th>
@@ -28,7 +28,8 @@
         <tbody>
             @foreach ($products as $product)
             <tr class="odd:bg-gray-100 even:bg-white hover:bg-gray-50">
-                <td class="px-4 py-2 border border-gray-300">{{ $product->ID }}</td>
+                <td class="text-center border border-gray-300">{{ $product->ID }}</td>
+
                 <td class="px-4 py-2 border border-gray-300">{{ $product->name }}</td>
                 <td class="px-4 py-2 border border-gray-300">{{ $product->price }}</td>
                 <td class="px-4 py-2 border border-gray-300">{{ $product->rating }}</td>
@@ -39,7 +40,17 @@
                 <td class="px-4 py-2 border border-gray-300">
                     <!-- Action buttons, for example: -->
                     <button class="bg-blue-500 text-white px-4 py-2 rounded">Edit</button>
-                    <button class="bg-red-500 text-white px-4 py-2 rounded">Delete</button>
+                    {{-- <form action="{{ route('products.destroy', $product->ID) }}" method="POST" onsubmit="return confirm('Are you sure?');">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" class="bg-red-500 text-white px-4 py-2 rounded">Delete</button>
+                    </form> --}}
+                    <a href="{{ route('hapusproduk', $product->ID) }}" class="bg-red-500 text-white px-4 py-2 rounded" onclick="return confirm('Apakah Anda yakin ingin menghapus produk ini?');">
+                        Hapus
+                    </a>
+
+
+
                 </td>
             </tr>
             @endforeach

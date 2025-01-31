@@ -9,10 +9,12 @@
 
 // Route::get('/', [ProductController::class, 'showHome']);
 
-use App\Http\Controllers\addProductController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+// use App\Http\Controllers\destroyProduct;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\addProductController;
+use App\Http\Controllers\DestroyProductController;
 
 // Arahkan route '/' ke halaman login
 // Route untuk menampilkan halaman login form
@@ -87,3 +89,9 @@ Route::get('/addProduct', function () {
 // Route::get('santri/tambah', [SantriController::class, 'tambahsantri'])->name('tambahsantri')->middleware('auth');
 // Route::post('/saveProdcut', [addProductController::class, 'saveProduct'])->name('saveProduct')->middleware('auth');
 Route::post('/saveProduct', [addProductController::class, 'saveProduct'])->name('saveProduct')->middleware('auth');
+
+// Route::delete('/products/{id}', [destroyProduct::class, 'destroy'])->name('products.destroy');
+// Route::delete('/products/{id}', [DestroyProductController::class, 'destroy'])->name('products.destroy');
+Route::get('products/hapus/{id}', [DestroyProductController::class, 'destroy'])
+->name('hapusproduk')
+->middleware('auth');
