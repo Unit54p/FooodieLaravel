@@ -1,8 +1,24 @@
 <link rel="stylesheet" href="css/home.css">
 <link rel="stylesheet" href="css/login.css">
+<script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+
+
 @extends('layouts/layBas')
 @section('title', 'Fooodie')
 @section('body')
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+@if(session('success'))
+<script>
+    Swal.fire({
+        title: "gagal!"
+        , text: "{{ session('gagal') }}"
+        , icon: "failed"
+        , confirmButtonText: "Ulangi"
+    });
+
+</script>
+@endif
 
 <body>
     <div class=" flex justify-between container_login_form">
@@ -19,16 +35,20 @@
                     @csrf
                     <!-- Input Email -->
                     <div class=" gap-3 flex justify-center align-middle flex-col ">
-
                         <!-- Label untuk input email -->
-                        <input type=" email" id="email" name="email" class=" inpt_field" required placeholder="Email">
+                        <input type=" email" id="email" name="email" class=" inpt_field" required placeholder="Email" value="{{ old('email') }}">
 
+                        @error('email')
+                        <div class="invalid-feedback textEror">{{ $message }}</div>
+                        @enderror
                         <!-- Input Password -->
                         <!-- Label untuk input password -->
-                        <input type="password" id="password" name="password" class=" inpt_field" required placeholder="Password">
+                        <input type="password" id="password" name="password" class="inpt_field " required placeholder="Password">
+                        @error('password')
+                        <div class="invalid-feedback  textEror">{{ $message }}</div>
+                        @enderror
                         <!-- Tombol Submit -->
                         <button type="submit" class="btn_primary">
-
                             Login
                         </button>
                     </div>

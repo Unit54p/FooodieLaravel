@@ -40,7 +40,7 @@ Route::post('/login', [AuthController::class, 'processLogin'])->name('login.proc
 
 // Route untuk halaman Home setelah login (halaman ini hanya bisa diakses jika sudah login)
 Route::get('/Home', [ProductController::class, 'showProducts'])->middleware('auth')->name('home');
-Route::get('/foods', [ProductController::class, 'showFoods'])->middleware('auth')->name('foods');
+Route::get('/foods', [ProductController::class, 'showFoods'])->middleware('auth')->name('foodsName');
 Route::get('/drinks', [ProductController::class, 'showDrinks'])->middleware('auth')->name('drinks');
 /*
     - Route ini menangani URL '/Home', yang akan memanggil metode `showHome` dari `ProductController`.
@@ -53,8 +53,6 @@ Route::get('/drinks', [ProductController::class, 'showDrinks'])->middleware('aut
 Route::get('/about', function () {
     return view('AboutUs');
 });
-// memuat routing dengan memanggil class function di controller
-// Route::get('/logOut', [AdminController::class, 'logOut']);
 
 Route::get('/apps', function () {
     return view('apps');
@@ -67,10 +65,6 @@ Route::get('/apps', function () {
 Route::get('/Admin', function () {
     return view('Admin.adminHome');
 });
-// Route::get('/productManagement', function () {
-//     return view('Admin.productManagement');
-// });
-
 
 Route::get('/userManagement', function () {
     return view('Admin.userManagement');
@@ -83,15 +77,6 @@ Route::get('/logOut', function () {
 Route::get('/addProduct', function () {
     return view('Admin.addProduct'); // Pastikan view ada di resources/views/Admin/addProduct.blade.php
 })->name('addProduct');
-
-
-// Route::get('santri/tampil', [SantriController::class, 'tampilsantri'])->name('tampilsantri')->middleware('auth');
-// Route::get('santri/tambah', [SantriController::class, 'tambahsantri'])->name('tambahsantri')->middleware('auth');
-// Route::post('/saveProdcut', [addProductController::class, 'saveProduct'])->name('saveProduct')->middleware('auth');
-
-
-// Route::delete('/products/{id}', [destroyProduct::class, 'destroy'])->name('products.destroy');
-// Route::delete('/products/{id}', [DestroyProductController::class, 'destroy'])->name('products.destroy');
 
 /*
 Rooute aksi (CRUD)

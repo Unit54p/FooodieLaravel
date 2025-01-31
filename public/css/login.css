@@ -4,14 +4,16 @@ body{
     background-color: white !important;
 }
 .inpt_field {
-    border: solid 1px var(--input-border-color) !important;
+    border: solid 1px var(--input-border-color) ;
     border-radius: 5px;
     padding: 10px 10px;
 }
 .container_login_form{
     height: 100vh;
 }
-
+.textEror{
+    color: red ;
+}
 .firstPart {
     background-color: var(--primary-color);
     color: white;

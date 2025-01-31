@@ -34,9 +34,11 @@ class ProductController extends Controller
 
     public function showProducts()
     {
-        $products = $this->getProducts(); // Ambil data produk
+        $foodProducts = Product::where('type', 'food')->limit(4)->get();
+        $drinkProducts = Product::where('type', 'drink')->limit(4)->get();
 
-        return view('home', $products);
+        return view('home', compact('foodProducts', 'drinkProducts')); // Kirim kedua variabel
+
         // untuk satu panggilan tanpa pembeda
         // Ambil semua data produk dari database
         // $products = Product::where('type', 'drink')->get();

@@ -1,4 +1,7 @@
 <link rel="stylesheet" href="{{ asset('css/basic.css') }}">
+
+
+
 @extends('layouts/layBas')
 @section('title', 'Admin Home')
 
@@ -7,6 +10,20 @@
 @endsection
 
 @section('body')
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+@if(session('success'))
+<script>
+    Swal.fire({
+        title: "Success!"
+        , text: "{{ session('success') }}"
+        , icon: "success"
+        , confirmButtonText: "OK"
+    });
+
+</script>
+@endif
+
 <div class="mx-6">
     <div class=" my-6 flex justify-between">
         <span class="text-3xl">product management</span>

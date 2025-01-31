@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Foundation\Auth\User;
 use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
@@ -29,12 +30,26 @@ class AuthController extends Controller
             $request->session()->regenerate();
 
             // Setelah login berhasil, arahkan pengguna ke halaman yang mereka tuju sebelumnya (atau ke halaman Home)
-            return redirect()->intended('/Home');
+            return redirect()->route('home')->with('success', 'Login berhasil!');
         }
 
         // Jika login gagal, kembalikan ke halaman login dengan pesan kesalahan
+        // return back()->withErrors([
+        //     'email' => 'Email salah.',
+        //     'password' => 'password salah' // Menampilkan pesan kesalahan untuk email atau password yang salah
+        // ]);
+        $user = User::where('email', $request->email)->first();
+
+        if (!$user) {
+            // Jika email tidak terdaftar
+            return back()->withErrors([
+                'email' => 'Email tidak ditemukan.',
+            ]);
+        }
+
+        // Jika password salah
         return back()->withErrors([
-            'email' => 'Email atau password salah.', // Menampilkan pesan kesalahan untuk email atau password yang salah
+            'password' => 'Password salah.',
         ]);
     }
 

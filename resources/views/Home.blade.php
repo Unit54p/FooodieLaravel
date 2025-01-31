@@ -9,6 +9,19 @@
 @endsection
 @section('body')
 <main>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    @if(session('success'))
+    <script>
+        Swal.fire({
+            title: "Success!"
+            , text: "{{ session('success') }}"
+            , icon: "success"
+            , confirmButtonText: "OK"
+        });
+
+    </script>
+    @endif
+
     {{-- hero --}}
     <div class="heroSection ">
         <div class="contentHeroSection flex justify-center ">
