@@ -6,6 +6,19 @@
 @endsection
 
 @section('body')
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+@if(session('success'))
+<script>
+    Swal.fire({
+        title: "Success!"
+        , text: "{{ session('success') }}"
+        , icon: "success"
+        , confirmButtonText: "OK"
+    });
+
+</script>
+@endif
+
 <div class="mx-5">
     <form action="{{ route('saveProduct') }}" method="POST" enctype="multipart/form-data">
         {{-- enctype="multipart/form-data" bagian ini memungkinkan untuk proses mengunggah file --}}

@@ -65,8 +65,8 @@ class addProductController extends Controller
         ]);
 
         // Redirect ke halaman addProduct setelah berhasil menyimpan produk
+        // return view('Admin.addProduct')
+
         return redirect()->route('addProduct')->with('success', 'Product added successfully!');
     }
-
-    
 }
