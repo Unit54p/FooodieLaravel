@@ -70,7 +70,7 @@ Route::get('/Admin', function () {
 // Route::get('/productManagement', function () {
 //     return view('Admin.productManagement');
 // });
-Route::get('/productManagement', [ProductController::class, 'productManagement'])->middleware('auth')->name('Admin.productManagement');
+
 
 Route::get('/userManagement', function () {
     return view('Admin.userManagement');
@@ -88,10 +88,21 @@ Route::get('/addProduct', function () {
 // Route::get('santri/tampil', [SantriController::class, 'tampilsantri'])->name('tampilsantri')->middleware('auth');
 // Route::get('santri/tambah', [SantriController::class, 'tambahsantri'])->name('tambahsantri')->middleware('auth');
 // Route::post('/saveProdcut', [addProductController::class, 'saveProduct'])->name('saveProduct')->middleware('auth');
-Route::post('/saveProduct', [addProductController::class, 'saveProduct'])->name('saveProduct')->middleware('auth');
+
 
 // Route::delete('/products/{id}', [destroyProduct::class, 'destroy'])->name('products.destroy');
 // Route::delete('/products/{id}', [DestroyProductController::class, 'destroy'])->name('products.destroy');
+
+/*
+Rooute aksi (CRUD)
+ */
+// create/add
+Route::post('/saveProduct', [addProductController::class, 'saveProduct'])->name('saveProduct')->middleware('auth');
+// update/edit
+
+// read
+Route::get('/productManagement', [ProductController::class, 'productView'])->middleware('auth')->name('Admin.productManagement');
+// delete
 Route::get('products/hapus/{id}', [DestroyProductController::class, 'destroy'])
-->name('hapusproduk')
-->middleware('auth');
+    ->name('hapusproduk')
+    ->middleware('auth');

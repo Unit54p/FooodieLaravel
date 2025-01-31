@@ -14,7 +14,7 @@ class ProductController extends Controller
             'drinkProducts' => Product::where('type', 'drink')->get(),
         ];
     }
-    public function productManagement()
+    public function productView()
     {
         $products = Product::all(); // Ambil data produk
 
