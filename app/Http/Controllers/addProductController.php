@@ -41,8 +41,6 @@ class addProductController extends Controller
         // Simpan gambar ke dalam folder 'public/img'
         // Fungsi storeAs secara default menyimpan file di dalam folder storage/app/public/ yang kemudian dapat diakses setelah menjalankan php artisan storage:link.
         // $imagePath = $request->file('image')->storeAs('img', $validated['image_name'] . '.' . $request->file('image')->extension(), 'public');
-
-
         $imagePath = $request->file('image')->getClientOriginalName();  // Nama asli file gambar
         $destinationPath = public_path('img');  // Path tujuan: public/img
         /*
@@ -50,7 +48,6 @@ class addProductController extends Controller
         $destinationPath sebagai path (public) dan $imagePath sebagai nama image
         */
         $request->file('image')->move($destinationPath, $imagePath);
-
         /*
         dengan cara ini kita bisa menentukan
         sendiri untuk kolom (objek sebelum tanda =>)

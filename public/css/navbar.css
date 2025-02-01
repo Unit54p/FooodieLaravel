@@ -5,6 +5,8 @@
        border-radius: 8px;
    }
 
+
+
    .active {
        background-color: white;
        color: var(--primary-color);
@@ -13,4 +15,13 @@
    .navLi:hover {
        background-color: white;
        color: var(--primary-color);
+   }
+
+   .userProfile {
+       color: white;
+   }
+   .imgUser {
+       width: 35px;
+       height: 35px;
+       border-radius: 50%;
    }

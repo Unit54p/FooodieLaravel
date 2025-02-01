@@ -1,6 +1,5 @@
 <link rel="stylesheet" href="css/home.css">
 <link rel="stylesheet" href="css/login.css">
-<script src="https://unpkg.com/@tailwindcss/browser@4"></script>
 
 
 @extends('layouts/layBas')
@@ -52,20 +51,13 @@
                             <a href="/registration" class="btn_register btn_primary text-center">
                                 Register
                             </a>
-                            <button type="submit" class="btn_primary">
-                                Login
-                            </button>
-
+                            <button type="submit" class="btn_primary">Login</button>
                         </div>
-
                     </div>
             </div>
             </form>
         </div>
-
     </div>
 
-    </div>
-    </div>
 </body>
 @endsection

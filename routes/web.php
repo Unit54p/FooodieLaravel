@@ -80,6 +80,9 @@ Route::get('/addProduct', function () {
     return view('Admin.addProduct'); // Pastikan view ada di resources/views/Admin/addProduct.blade.php
 })->name('addProduct');
 
+Route::get('/userSetting', function () {
+    return view('UserSetting');
+    });
 Route::get('/registration', [UserRegistration::class, 'registrationPage'])->name('registrationPage');
 /*
 Rooute aksi (CRUD)
@@ -91,6 +94,7 @@ Route::post('/saveRegistration', [UserRegistration::class, 'saveRegistration'])-
 
 // read
 Route::get('/productManagement', [ProductController::class, 'productView'])->middleware('auth')->name('Admin.productManagement');
+
 // delete
 Route::get('products/hapus/{id}', [DestroyProductController::class, 'destroy'])
     ->name('hapusproduk')
