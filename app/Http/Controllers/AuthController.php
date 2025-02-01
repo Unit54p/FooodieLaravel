@@ -51,6 +51,7 @@ class AuthController extends Controller
         return back()->withErrors([
             'password' => 'Password salah.',
         ]);
+
     }
 
     // Memproses logout

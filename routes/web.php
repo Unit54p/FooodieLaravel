@@ -29,8 +29,15 @@ Route::get('/', [AuthController::class, 'showLoginForm'])->name('login');
 */
 
 // Route untuk memproses login form (POST request)
-Route::post('/login', [AuthController::class, 'processLogin'])->name('login.process');
-
+Route::post('/loginProcess', [AuthController::class, 'processLogin'])->name('login.process');
+// jika user sengaja mengakses URL '/loginProcess' tanpa melalui form login maka di arahkan ke halaman login
+Route::get('/loginProcess', function () {
+    return redirect()->route('login'); // Redirect ke halaman login
+});
+// jika user sengaja mengakses URL '/login' maka di arahkan ke halaman login walau aslinya dengan '/' untuk mengakses route ini untuk menghindari user bingung jika ingin mengaksesnya dengan mengetik langsung melalui url
+Route::get('/login', function () {
+    return redirect()->route('login'); // Redirect ke halaman login
+});
 /*
     - Route ini menangani request POST ke URL '/login' yang dikirimkan dari form login.
     - `processLogin` di dalam `AuthController` bertanggung jawab untuk memvalidasi data yang dikirimkan oleh pengguna (email dan password).
@@ -82,7 +89,7 @@ Route::get('/addProduct', function () {
 
 Route::get('/userSetting', function () {
     return view('UserSetting');
-    });
+});
 Route::get('/registration', [UserRegistration::class, 'registrationPage'])->name('registrationPage');
 /*
 Rooute aksi (CRUD)

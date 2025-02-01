@@ -43,7 +43,7 @@
             <div class="containerContentLogin ">
                 <h3 class="text-start text-2xl mb-3">Registration</h3>
                 <!-- Form Login -->
-            <form action="{{ route('saveRegistration') }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('saveRegistration') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <!-- Input Email -->
                     <div class=" gap-3 flex justify-center align-middle flex-col">
