@@ -8,15 +8,15 @@
 @section('body')
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 @if(session('success'))
-<script>
-    Swal.fire({
-        title: "Success!"
-        , text: "{{ session('success') }}"
-        , icon: "success"
-        , confirmButtonText: "OK"
-    });
+    <script>
+        Swal.fire({
+            title: "Success!"
+            , text: "{{ session('success') }}"
+            , icon: "success"
+            , confirmButtonText: "OK"
+        });
 
-</script>
+    </script>
 @endif
 
 <div class="mx-5">
@@ -40,13 +40,16 @@
                     <tr class="odd:bg-gray-100 even:bg-white hover:bg-gray-50">
                         <td class="px-4 py-2 border border-gray-300">Name</td>
                         <td class="px-4 py-2 border border-gray-300">
-                            <input type="text" name="name" class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter name">
+                            <input type="text" name="name"
+                                class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                placeholder="Enter name">
                         </td>
                     </tr>
                     <tr class="odd:bg-gray-100 even:bg-white hover:bg-gray-50">
                         <td class="px-4 py-2 border border-gray-300">Type</td>
                         <td class="px-4 py-2 border border-gray-300">
-                            <select name="type" id="" class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            <select name="type" id=""
+                                class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
 
                                 <option value="food">food</option>
                                 <option value="drink">drink</option>
@@ -57,26 +60,33 @@
                     <tr class="odd:bg-gray-100 even:bg-white hover:bg-gray-50">
                         <td class="px-4 py-2 border border-gray-300">Price</td>
                         <td class="px-4 py-2 border border-gray-300">
-                            <input type="number" name="price" class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter price">
+                            <input type="number" name="price"
+                                class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                placeholder="Enter price">
                         </td>
                     </tr>
                     <tr class="odd:bg-gray-100 even:bg-white hover:bg-gray-50">
                         <td class="px-4 py-2 border border-gray-300">Rate</td>
                         <td class="px-4 py-2 border border-gray-300">
-                            <input type="number" name="rating" step="0.1" max="5" class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter rate">
+                            <input type="number" name="rating" step="0.1" max="5"
+                                class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                placeholder="Enter rate">
                         </td>
                     </tr>
                     <tr class="odd:bg-gray-100 even:bg-white hover:bg-gray-50">
                         <td class="px-4 py-2 border border-gray-300">Image Name</td>
                         <td class="px-4 py-2 border border-gray-300">
-                            <input type="text" name="image_name" class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter image name">
+                            <input type="text" name="image_name"
+                                class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                placeholder="Enter image name">
                         </td>
                     </tr>
 
                     <tr class="odd:bg-gray-100 even:bg-white hover:bg-gray-50">
                         <td class="px-4 py-2 border border-gray-300">Upload Image</td>
                         <td class="px-4 py-2 border border-gray-300">
-                            <input type="file" name="image" class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            <input type="file" name="image"
+                                class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
                         </td>
                     </tr>
 

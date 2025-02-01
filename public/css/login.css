@@ -1,25 +1,30 @@
 @import url('basic.css');
 
-body{
+body {
     background-color: white !important;
 }
+
 .inpt_field {
-    border: solid 1px var(--input-border-color) ;
+    border: solid 1px var(--input-border-color);
     border-radius: 5px;
     padding: 10px 10px;
 }
-.container_login_form{
+
+.container_login_form {
     height: 100vh;
 }
-.textEror{
-    color: red ;
+
+.textEror {
+    color: red;
 }
+
 .firstPart {
     background-color: var(--primary-color);
     color: white;
     width: 50%;
 }
-.textFirstPart{
+
+.textFirstPart {
     position: relative;
     top: 40%;
     left: 10%;
@@ -30,6 +35,26 @@ body{
     top: 35%;
     width: 50%;
 }
-.containerContentLogin{
+
+.btn_register {
+    background-color: var(--input-border-color) !important;
+    color: white !important;
+    border: solid 1px var(--input-border-color) !important;
+}
+
+.btn_register:hover {
+    background-color: white !important;
+    color: var(--input-border-color) !important;
+}
+
+.btn_register:focus {
+    background-color: gray !important;
+    /* Warna abu-abu saat focus */
+    color: var(--secondaryFont-color) !important;
+    /* Warna font biru saat focus */
+}
+
+.containerContentLogin,
+.containerBtn {
     width: 85%;
 }

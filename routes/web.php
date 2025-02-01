@@ -14,7 +14,9 @@ use App\Http\Controllers\AuthController;
 // use App\Http\Controllers\destroyProduct;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\addProductController;
+use App\Http\Controllers\Controller;
 use App\Http\Controllers\DestroyProductController;
+use App\Http\Controllers\UserRegistration;
 
 // Arahkan route '/' ke halaman login
 // Route untuk menampilkan halaman login form
@@ -78,11 +80,13 @@ Route::get('/addProduct', function () {
     return view('Admin.addProduct'); // Pastikan view ada di resources/views/Admin/addProduct.blade.php
 })->name('addProduct');
 
+Route::get('/registration', [UserRegistration::class, 'registrationPage'])->name('registrationPage');
 /*
 Rooute aksi (CRUD)
  */
 // create/add
 Route::post('/saveProduct', [addProductController::class, 'saveProduct'])->name('saveProduct')->middleware('auth');
+Route::post('/saveRegistration', [UserRegistration::class, 'saveRegistration'])->name('saveRegistration');
 // update/edit
 
 // read

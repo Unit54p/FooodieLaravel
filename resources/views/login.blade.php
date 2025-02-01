@@ -9,15 +9,15 @@
 
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 @if(session('success'))
-<script>
-    Swal.fire({
-        title: "gagal!"
-        , text: "{{ session('gagal') }}"
-        , icon: "failed"
-        , confirmButtonText: "Ulangi"
-    });
+    <script>
+        Swal.fire({
+            title: "gagal!"
+            , text: "{{ session('gagal') }}"
+            , icon: "failed"
+            , confirmButtonText: "Ulangi"
+        });
 
-</script>
+    </script>
 @endif
 
 <body>
@@ -34,28 +34,38 @@
                 <form action="{{ route('login.process') }}" method="POST">
                     @csrf
                     <!-- Input Email -->
-                    <div class=" gap-3 flex justify-center align-middle flex-col ">
-                        <!-- Label untuk input email -->
-                        <input type=" email" id="email" name="email" class=" inpt_field" required placeholder="Email" value="{{ old('email') }}">
+                    <div class=" gap-3 flex justify-center align-middle flex-col">
+                        <input type=" email" id="email" name="email" class=" inpt_field" required placeholder="Email"
+                            value="{{ old('email') }}">
 
                         @error('email')
-                        <div class="invalid-feedback textEror">{{ $message }}</div>
+                            <div class="invalid-feedback textEror">{{ $message }}</div>
                         @enderror
                         <!-- Input Password -->
-                        <!-- Label untuk input password -->
-                        <input type="password" id="password" name="password" class="inpt_field " required placeholder="Password">
+                        <input type="password" id="password" name="password" class="inpt_field " required
+                            placeholder="Password">
                         @error('password')
-                        <div class="invalid-feedback  textEror">{{ $message }}</div>
+                            <div class="invalid-feedback  textEror">{{ $message }}</div>
                         @enderror
                         <!-- Tombol Submit -->
-                        <button type="submit" class="btn_primary">
-                            Login
-                        </button>
-                    </div>
-                </form>
-            </div>
+                        <div class="grid grid-cols-2 gap-4">
+                            <a href="/registration" class="btn_register btn_primary text-center">
+                                Register
+                            </a>
+                            <button type="submit" class="btn_primary">
+                                Login
+                            </button>
 
+                        </div>
+
+                    </div>
+            </div>
+            </form>
         </div>
+
+    </div>
+
+    </div>
     </div>
 </body>
 @endsection

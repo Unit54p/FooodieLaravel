@@ -28,7 +28,7 @@ div span footer nav table tr td {
     color: var(--secondaryFont-color);
     border-radius: 5px;
     padding: 10px 10px;
-    border: none;
+    border: solid 1px var(--primary-color);
     cursor: pointer;
     transition: background-color 0.1s, color 0.3s;
 }
@@ -39,7 +39,7 @@ div span footer nav table tr td {
 }
 
 .btn_primary:focus {
-    background-color: gray;
+    background-color: var(--primary-color);
     /* Warna abu-abu saat focus */
     color: var(--secondaryFont-color);
     /* Warna font biru saat focus */
