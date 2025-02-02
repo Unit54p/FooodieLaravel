@@ -32,8 +32,10 @@ body {
 
 .secondPart {
     position: relative;
-    top: 35%;
     width: 50%;
+    bottom: 0%;
+    top: 35%;
+    height: fit-content;
 }
 
 .btn_register {

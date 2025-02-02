@@ -16,6 +16,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\addProductController;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\DestroyProductController;
+use App\Http\Controllers\UpdateProductController;
 use App\Http\Controllers\UserRegistration;
 
 // Arahkan route '/' ke halaman login
@@ -75,9 +76,6 @@ Route::get('/Admin', function () {
     return view('Admin.adminHome');
 });
 
-Route::get('/userManagement', function () {
-    return view('Admin.userManagement');
-});
 
 Route::get('/logOut', function () {
     return view('Admin.logOut');
@@ -90,7 +88,12 @@ Route::get('/addProduct', function () {
 Route::get('/userSetting', function () {
     return view('UserSetting');
 });
+
 Route::get('/registration', [UserRegistration::class, 'registrationPage'])->name('registrationPage');
+
+Route::get('/editProduct/{id}', [UpdateProductController::class, 'editView'])->name('editProduct')->middleware('auth');
+
+
 /*
 Rooute aksi (CRUD)
  */
@@ -98,6 +101,7 @@ Rooute aksi (CRUD)
 Route::post('/saveProduct', [addProductController::class, 'saveProduct'])->name('saveProduct')->middleware('auth');
 Route::post('/saveRegistration', [UserRegistration::class, 'saveRegistration'])->name('saveRegistration');
 // update/edit
+Route::put('/saveEditProduct/{id}', [UpdateProductController::class, 'UpdateProduct'])->name('saveEditProduct');
 
 // read
 Route::get('/productManagement', [ProductController::class, 'productView'])->middleware('auth')->name('Admin.productManagement');
