@@ -16,6 +16,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\addProductController;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\DestroyProductController;
+use App\Http\Controllers\EditUserController;
 use App\Http\Controllers\UpdateProductController;
 use App\Http\Controllers\UserRegistration;
 
@@ -68,6 +69,9 @@ Route::get('/apps', function () {
     return view('apps');
 });
 
+Route::get('/editUserView{id}', [EditUserController::class, 'editUserView'])->name('editUserView')->middleware('auth');
+
+
 /*
 ****** Router Admin ******
 */
@@ -102,6 +106,8 @@ Route::post('/saveProduct', [addProductController::class, 'saveProduct'])->name(
 Route::post('/saveRegistration', [UserRegistration::class, 'saveRegistration'])->name('saveRegistration');
 // update/edit
 Route::put('/saveEditProduct/{id}', [UpdateProductController::class, 'UpdateProduct'])->name('saveEditProduct');
+
+Route::put('/saveUserSetting{id}', [EditUserController::class, 'saveUserSetting'])->name('SaveUserSetting');
 
 // read
 Route::get('/productManagement', [ProductController::class, 'productView'])->middleware('auth')->name('Admin.productManagement');

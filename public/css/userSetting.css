@@ -1,0 +1,29 @@
+/* Default styling untuk input */
+.inputField {
+    display: inline-block;
+    width: 100%;
+    /* Agar lebar sesuai container */
+    padding: 10px;
+    border: 1px solid #d1d5db;
+    /* border-gray-300 */
+    border-radius: 0.375rem;
+    /* rounded (Tailwind default 0.375rem) */
+    font-size: 1rem;
+    /* Ukuran font standar */
+    background-color: #fff;
+    transition: border-color 0.15s ease, box-shadow 0.3s ease;
+}
+
+.inputField:hover {
+        border: 1px solid #60657C;
+}
+
+/* Menambahkan efek saat fokus (focus) */
+.inputField:focus {
+    outline: none;
+    /* Menghilangkan outline default */
+    border-color: #3b82f6;
+    /* focus:ring-blue-500 (blue border) */
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.4);
+    /* focus:ring-2 */
+}

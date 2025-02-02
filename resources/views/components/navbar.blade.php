@@ -15,7 +15,7 @@
     </ul>
     @auth
         <div class="flex flex-row userProfile">
-            <a href="/userSetting" class="navLi">Welcome, {{ Auth::user()->name }}</a>
+            <a href="{{ route('editUserView', Auth::user()->id) }}" class="navLi">Welcome, {{ Auth::user()->name }}</a>
             <img src="{{ Auth::user()->imgProfile }}" alt="" class="imgUser">
         </div>
     @endauth
