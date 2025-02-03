@@ -34,7 +34,6 @@ class addProductController extends Controller
             'type' => 'required|string|max:255',
             'price' => 'required|numeric',
             'rating' => 'required|numeric|min:0|max:5',
-            'image_name' => 'required|string|max:255', // Nama gambar
             'image' => 'required|image|mimes:jpg,jpeg,png|max:2048', // Validasi file gambar
         ]);
 

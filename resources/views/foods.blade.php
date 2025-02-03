@@ -9,7 +9,6 @@
 @endsection
 
 @section('body')
-
 <div class=" ">
     <div class="text-center text-4xl my-8">FOOD</div>
     {{-- container --}}

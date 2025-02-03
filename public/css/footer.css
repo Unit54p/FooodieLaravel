@@ -1,7 +1,7 @@
 @import url('css/basic.css');
 
 :root {
-    --height-root: 280px;
+    --height-root: 250px;
 }
 
 .Classfooter {}
@@ -10,9 +10,6 @@
     background-color: var(--primary-color);
     color: var(--secondaryFont-color);
     height: var(--height-root);
-    margin: 4rem 0 0 0;
-    border-radius: 20px 20px 0 0;
-    width: 70%;
-    gap: 25rem;
+    width: 100%;
     height: var(--height-root);
 }

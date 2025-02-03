@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="{{ asset('css/footer.css') }}">
 <footer class="Classfooter flex justify-center">
-    <div class="contentFooter flex justify-center items-center ">
+    <div class="contentFooter flex justify-evenly items-center flex-row ">
         <div class="">
             <span class="text-6xl">Fooooooodie</span>
             <br>

@@ -23,13 +23,15 @@
     height: 20%;
 }
 
+.card_img {
+    border-radius: 0;
+}
+
 .img_hero {
     width: 20rem;
     /* Mengatur tinggi otomatis untuk menjaga rasio gambar */
     object-fit: contain;
 }
-
-
 
 .card {
     width: 300px;
@@ -47,6 +49,21 @@
     background-color: var(--primary-color);
     color: var(--secondaryFont-color);
 }
-.contenSection{
+
+.contenSection {
+    height: 40vh;
     margin: 4rem 20% 0 20%;
+}
+
+
+.contenSection4 {
+    background: var(--secondaryFont-color);
+    padding: 4rem 20% 5rem 20%;
+}
+
+.container_section {}
+
+.imgSection {
+    width: 70%;
+    height: fit-content;
 }

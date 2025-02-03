@@ -1,6 +1,5 @@
 <link rel="stylesheet" href="css/home.css">
 <link rel="stylesheet" href="css/navbar.css">
-
 @extends('layouts/layBas')
 
 @section('title', 'Fooodie Home')
@@ -117,23 +116,39 @@
             <span>You can <strong>pick it up</strong> at our place or,<br>
                 we can <strong>deliver it</strong> to your place</span>
         </div>
-        <div>
-            <img src="{{ asset('img/deliver.png') }}" alt="">
+        <div class="flex justify-end items-center">
+            <img src="{{ asset('img/deliver.png') }}" alt="" class="imgSection">
         </div>
     </div>
     {{-- section hero3 --}}
     <div class="contenSection flex justify-between">
-        <div>
-            <img src="{{ asset('img/gmaps.png') }}" alt="">
+        <div class="flex justify-start items-center">
+            <img src="{{ asset('img/gmaps.png') }}" class="imgSection" alt="">
         </div>
         <div class="flex align-middle justify-center flex-col text-end gap-2">
             <span class="text-4xl">About our place</span>
             <span>South park, heliysa alika, no 99</span>
             <div class="flex justify-end ">
-                <button class="btn_primary">Google Maps</button>
+                <button class="btn_secondary">Google Maps</button>
             </div>
         </div>
-
+    </div>
+    {{-- section hero4 --}}
+    <div class="contenSection4 ">
+        <div class="flex justify-between">
+            <div class="flex align-middle justify-center flex-col gap-2">
+                <span class="text-4xl">Order now from
+                    Apps!</span>
+                <span>You can download it on your phone Android or Aplle. <br>get your food ready through your phone!</span>
+                <div class="flex justify-start gap-6">
+                    <button class="btn_secondary">Apple store</button>
+                    <button class="btn_secondary">Android</button>
+                </div>
+            </div>
+            <div class="flex justify-end items-center">
+                <img src="{{ asset('img/rendang1.png') }}" alt="" class="imgSection">
+            </div>
+        </div>
     </div>
 </main>
 @endsection
