@@ -19,7 +19,7 @@
                 <div class="card mx-5 rounded-lg overflow-hidden shadow-lg mb-6">
                     {{-- Gambar --}}
                     <div>
-                        <img src="{{ asset($product->img) }}" alt="" class="card_img w-full object-cover">
+                        <img src="{{ Storage::url($product->img) }}" alt="" class="card_img w-full object-contain">
                     </div>
                     {{-- Content --}}
                     <div class="cardCaption p-4 ">

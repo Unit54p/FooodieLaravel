@@ -29,7 +29,7 @@
                 <span>Your hungry is important to us! Call us and you will find :)</span>
             </div>
             <div class="flex align-middle">
-                <img src="{{ asset('img/rendang1.png') }}" alt="" class="img_hero ">
+                <img src="{{ Storage::url('img/rendang2.png') }}" alt="" class="img_hero ">
             </div>
         </div>
         <div class="sosmedNavHero p-16 flex items-center">
@@ -49,7 +49,7 @@
                 <div class="card mx-5 rounded-lg overflow-hidden shadow-lg">
                     {{-- Gambar --}}
                     <div>
-                        <img src="{{ asset($product->img) }}" alt="" class="card_img w-full object-cover">
+                        <img src="{{ Storage::url($product->img) }}" alt="" class="card_img w-full object-cover">
                     </div>
                     {{-- Content --}}
                     <div class="cardCaption p-4 ">
@@ -84,7 +84,7 @@
                 <div class="card mx-5 rounded-lg overflow-hidden shadow-lg">
                     {{-- Gambar --}}
                     <div>
-                        <img src="{{ asset($product->img) }}" alt="" class="card_img w-full object-cover">
+                        <img src="{{ Storage::url($product->img) }}" alt="" class="card_img w-full object-cover">
                     </div>
                     {{-- Content --}}
                     <div class="cardCaption p-4 ">
@@ -139,14 +139,15 @@
             <div class="flex align-middle justify-center flex-col gap-2">
                 <span class="text-4xl">Order now from
                     Apps!</span>
-                <span>You can download it on your phone Android or Aplle. <br>get your food ready through your phone!</span>
+                <span>You can download it on your phone Android or Aplle. <br>get your food ready through your
+                    phone!</span>
                 <div class="flex justify-start gap-6">
                     <button class="btn_secondary">Apple store</button>
                     <button class="btn_secondary">Android</button>
                 </div>
             </div>
             <div class="flex justify-end items-center">
-                <img src="{{ asset('img/rendang1.png') }}" alt="" class="imgSection">
+                <img src="{{ Storage::url('img/rendang2.png') }}" alt="" class="imgSection">
             </div>
         </div>
     </div>
