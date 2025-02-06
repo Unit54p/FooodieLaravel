@@ -18,8 +18,12 @@
    .userProfile {
        color: white;
    }
+
    .imgUser {
-       width: 35px;
-       height: 35px;
-       border-radius: 50%;
+    border-radius: 50%;
+   }
+
+   .btn_img:hover {
+    border-radius: 50%;
+    cursor: pointer;
    }
