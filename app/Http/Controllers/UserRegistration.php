@@ -28,21 +28,34 @@ class UserRegistration extends Controller
             'email.unique' => 'Email sudah digunakan, silakan gunakan email lain.', // Pesan error kustom
         ]);
 
-        $imagePath = $request->file('imageProfile')->getClientOriginalName();  // Nama asli file gambar
-        $destinationPath = public_path('img/userProfilePicture');  // Path tujuan: public/img
-        $request->file('imageProfile')->move($destinationPath, $imagePath);
+        //     $imagePath = $request->file('imageProfile')->getClientOriginalName();  // Nama asli file gambar
+        //     $destinationPath = public_path('img/userProfilePicture');  // Path tujuan: public/img
+        //     $request->file('imageProfile')->move($destinationPath, $imagePath);
 
-        // dd($imagePath);
+        //     // dd($imagePath);
 
+        //     $user = User::create([
+        //         'name' => $request->username,
+        //         'email' => $request->email,
+        //         'password' => Hash::make($request->password),
+        //         'role' => 'user',
+        //         'imgProfile' => 'img/userProfilePicture/' . $imagePath, // Simpan path relatif ke kolom 'img'
+        //     ]);
+
+        //     // Auth::login($user);
+        //     return redirect()->route('registrationPage')->with('success', 'registration success welcome');
+        // }
+        $imagePath = $request->file('imageProfile')->store('img/userProfilePicture', 'public');
+
+        // Simpan path yang bisa diakses dari public
         $user = User::create([
             'name' => $request->username,
             'email' => $request->email,
             'password' => Hash::make($request->password),
             'role' => 'user',
-            'imgProfile' => 'img/userProfilePicture/' . $imagePath, // Simpan path relatif ke kolom 'img'
+            'imgProfile' => 'storage/' . $imagePath, // Path yang bisa diakses dari URL
         ]);
 
-        // Auth::login($user);
-        return redirect()->route('registrationPage')->with('success', 'registration success welcome');
+        return redirect()->route('registrationPage')->with('success', 'Registration success, welcome!');
     }
 }

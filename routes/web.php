@@ -55,10 +55,6 @@ Route::get('/addProduct', function () {
     return view('Admin.addProduct'); // Pastikan view ada di resources/views/Admin/addProduct.blade.php
 })->name('addProduct');
 
-Route::get('/userSetting', function () {
-    return view('UserSetting');
-});
-
 Route::get('/registration', [UserRegistration::class, 'registrationPage'])->name('registrationPage');
 
 Route::get('/editProduct/{id}', [UpdateProductController::class, 'editView'])->name('editProduct')->middleware('auth');
