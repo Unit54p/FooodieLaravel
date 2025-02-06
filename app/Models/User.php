@@ -11,6 +11,11 @@ class User extends Authenticatable
 {
     /** @use HasFactory<\Database\Factories\UserFactory> */
     use HasFactory, Notifiable;
+    // Di dalam model User
+    public function orders()
+    {
+        return $this->hasMany(UserOrderHistory::class, 'user_id', 'id');
+    }
 
     /**
      * The attributes that are mass assignable.

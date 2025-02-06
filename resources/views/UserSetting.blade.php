@@ -54,10 +54,14 @@
                 <img src="{{ Storage::url($user->imgProfile) }}" alt="" class="mb-3">
                 <div class="file-input-container">
                     <label for="image">Change Photo</label><br>
-
                     <input type="file" name="image"
                         class="file:mr-4 file:rounded-full file:border-0 file:bg-violet-50 file:px-4 file:py-2 file:text-sm file:font-semibold file:text-violet-700 hover:file:bg-violet-100 dark:file:bg-violet-600 dark:file:text-violet-100 dark:hover:file:bg-violet-500 ..." />
-
+                </div>
+                <div>
+                    <button type="button" class="btn_primary"
+                        onclick="window.location.href='{{ route('userOrderHistoryView', ['id' => $user->id]) }}'">
+                        History
+                    </button>
                 </div>
             </div>
         </div>

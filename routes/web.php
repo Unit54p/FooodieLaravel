@@ -11,6 +11,8 @@ use App\Http\Controllers\Controller;
 use App\Http\Controllers\DestroyProductController;
 use App\Http\Controllers\EditUserController;
 use App\Http\Controllers\UpdateProductController;
+use App\Http\Controllers\UserOrderHistory;
+use App\Http\Controllers\UserOrderHistoryController;
 use App\Http\Controllers\UserRegistration;
 
 Route::get('/', [AuthController::class, 'showLoginForm'])->name('login');
@@ -38,6 +40,7 @@ Route::get('/apps', function () {
 
 Route::get('/editUserView{id}', [EditUserController::class, 'editUserView'])->name('editUserView')->middleware('auth');
 
+Route::get('/userOrderHistory/{id}', [UserOrderHistoryController::class, 'userOrderHistoryView'])->name('userOrderHistoryView');
 /*
 ****** Router Admin ******
 */
