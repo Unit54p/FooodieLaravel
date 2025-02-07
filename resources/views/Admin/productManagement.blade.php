@@ -46,13 +46,12 @@
             @foreach ($products as $product)
                 <tr class="odd:bg-gray-100 even:bg-white hover:bg-gray-50">
                     <td class="text-center border border-gray-300">{{ $product->ID }}</td>
-
                     <td class="px-4 py-2 border border-gray-300">{{ $product->name }}</td>
                     <td class="px-4 py-2 border border-gray-300">{{ $product->price }}</td>
                     <td class="px-4 py-2 border border-gray-300">{{ $product->rating }}</td>
                     <td class="px-4 py-2 border border-gray-300">{{ $product->type }}</td>
                     <td class="px-4 py-2 border border-gray-300">
-                        <img src="{{ $product->img }}" alt="{{ $product->name }}" class="w-16 h-16 object-cover">
+                        <img src="{{ Storage::url($product->img) }}" alt="{{ $product->name }}" class="w-16 h-16 object-cover">
                     </td>
                     <td class="px-4 py-2 border border-gray-300">
                         <!-- Action buttons, for example: -->

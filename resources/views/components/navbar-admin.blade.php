@@ -9,7 +9,7 @@
             <li class="navLi {{ Request::is('productManagement') ? 'active' : '' }}">
                 <a href="/productManagement">Product Management</a>
             </li>
-            
+
         </div>
         <div>
             <li class="navLi btn_logOut {{ Request::is('logOut') ? 'active' : '' }}">

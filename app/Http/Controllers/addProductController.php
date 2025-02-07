@@ -37,31 +37,15 @@ class addProductController extends Controller
             'image' => 'required|image|mimes:jpg,jpeg,png|max:2048', // Validasi file gambar
         ]);
 
-        // Simpan gambar ke dalam folder 'public/img'
-        // Fungsi storeAs secara default menyimpan file di dalam folder storage/app/public/ yang kemudian dapat diakses setelah menjalankan php artisan storage:link.
-        // $imagePath = $request->file('image')->storeAs('img', $validated['image_name'] . '.' . $request->file('image')->extension(), 'public');
-        $imagePath = $request->file('image')->getClientOriginalName();  // Nama asli file gambar
-        $destinationPath = public_path('img');  // Path tujuan: public/img
-        /*
-        memindahkan gambar ke folder public/img
-        $destinationPath sebagai path (public) dan $imagePath sebagai nama image
-        */
-        $request->file('image')->move($destinationPath, $imagePath);
-        /*
-        dengan cara ini kita bisa menentukan
-        sendiri untuk kolom (objek sebelum tanda =>)
-        di database akan diisi dengan nilai apa (sesudah tanda =>)
-        */
+        $imagePath = $request->file('image')->store('products', 'public');
+
         Product::create([
             'name' => $validated['name'],
             'type' => $validated['type'],
             'price' => $validated['price'],
             'rating' => $validated['rating'],
-            'img' => 'img/' . $imagePath, // Simpan path relatif ke kolom 'img'
+            'img' =>  $imagePath, // Simpan path relatif ke kolom 'img'
         ]);
-
-        // Redirect ke halaman addProduct setelah berhasil menyimpan produk
-        // return view('Admin.addProduct')
 
         return redirect()->route('addProduct')->with('success', 'Product added successfully!');
     }
