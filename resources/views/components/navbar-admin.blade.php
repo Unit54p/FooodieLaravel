@@ -4,11 +4,14 @@
     <ul class="flex justify-between items-center ">
         <div class="flex justify-start gap-3">
             <li class="navLi {{ Request::is('Admin') ? 'active' : '' }}">
-                <a href="/Admin">Home</a>
+                <a href="{{ route('adminHome') }}">Home</a>
             </li>
-            <li class="navLi {{ Request::is('productManagement') ? 'active' : '' }}">
-                <a href="/productManagement">Product Management</a>
+
+            <li class="navLi {{ Route::currentRouteName() === 'adminHome/productManagement' ? 'active' : '' }}">
+                <a href="{{ route('productManagement') }}">Product Management</a>
             </li>
+
+
 
         </div>
         <div>

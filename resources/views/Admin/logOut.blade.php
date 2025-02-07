@@ -6,6 +6,11 @@
 @endsection
 
 @section('body')
-log out
+Apakah anda yakin?
+<form action="{{ route('logout') }}" method="POST">
+    @csrf
+<button type="submit" class="btn_primary">Log out</button>
+</form>
 @endsection
+
 

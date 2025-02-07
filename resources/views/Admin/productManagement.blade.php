@@ -1,9 +1,7 @@
 <link rel="stylesheet" href="{{ asset('css/basic.css') }}">
 
-
-
 @extends('layouts/layBas')
-@section('title', 'Admin Home')
+@section('title', 'Product management')
 
 @section('navbar')
 <x-navbar-admin />
