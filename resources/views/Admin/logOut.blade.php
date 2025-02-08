@@ -9,8 +9,6 @@
 Apakah anda yakin?
 <form action="{{ route('logout') }}" method="POST">
     @csrf
-<button type="submit" class="btn_primary">Log out</button>
+    <button type="submit" class="btn_primary">Log out</button>
 </form>
 @endsection
-
-

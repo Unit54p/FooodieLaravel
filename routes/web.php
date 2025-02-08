@@ -67,24 +67,17 @@ Route::middleware(['auth', 'admin'])->prefix('Admin')->group(function () {
     //     return view('Admin.adminHome');
     // })->name('adminHome');
     Route::get('/', [AdminDashboardController::class, 'DashboardView'])->name('adminHome');
-    
+
     Route::get('/addProduct', function () {
         return view('Admin.addProduct');
     })->name('addProduct');
     Route::get('/editProduct/{id}', [UpdateProductController::class, 'editView'])->name('editProduct');
-    Route::post('/logOut', function () {
-        Auth::logout();
-        request()->session()->invalidate();
-        request()->session()->regenerateToken();
-        return redirect('/')->with('success', 'You have been logged out.');
-    })->name('logOut');
 
     Route::post('/saveProduct', [addProductController::class, 'saveProduct'])->name('saveProduct');
     Route::put('/saveEditProduct/{id}', [UpdateProductController::class, 'UpdateProduct'])->name('saveEditProduct');
     Route::get('/products/hapus/{id}', [DestroyProductController::class, 'destroy'])->name('hapusproduk');
     Route::get('/productManagement', [ProductController::class, 'productView'])
         ->name('productManagement'); // <--- Sesuaikan name() dengan yang ada di route:list
-
 });
 
 /*

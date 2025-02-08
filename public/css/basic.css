@@ -33,6 +33,22 @@ div {
     transition: background-color 0.1s, color 0.3s;
 }
 
+.btn_logOut {
+    background-color: #ed4040;
+    color: white;
+    padding: 10px 10px;
+    border-radius: 5px;
+    border: #ed4040 solid 1px;
+    transition: background-color 0.1s, color 0.3s;
+}
+
+.btn_logOut:hover {
+    cursor: pointer;
+    color: #d82c2c;
+    background-color: white;
+    border: #d82c2c solid 1px;
+}
+
 .btn_secondary {
     background-color: var(--primary-color);
     color: var(--secondaryFont-color);
