@@ -1,29 +1,33 @@
-   .navLi {
-       padding: 6px 8px;
-       margin: 0 5px;
-       transition: 0.2s ease;
-       border-radius: 8px;
-   }
+.navLi {
+    padding: 6px 8px;
+    margin: 0 5px;
+    transition: 0.2s ease;
+    border-radius: 8px;
+}
 
-   .active {
-       background-color: white;
-       color: var(--primary-color);
-   }
+.active {
+    background-color: white;
+    color: var(--primary-color);
+}
 
-   .navLi:hover {
-       background-color: white;
-       color: var(--primary-color);
-   }
+.navLi:hover {
+    background-color: white;
+    color: var(--primary-color);
+}
 
-   .userProfile {
-       color: white;
-   }
+.userProfile {
+    color: white;
+}
 
-   .imgUser {
+.imgUser {
     border-radius: 50%;
-   }
+}
 
-   .btn_img:hover {
+.btn_img:hover {
     border-radius: 50%;
     cursor: pointer;
-   }
+}
+
+.imgNavbar {
+    width: 40px;
+}

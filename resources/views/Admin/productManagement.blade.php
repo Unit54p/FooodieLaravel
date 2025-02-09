@@ -25,7 +25,7 @@
 <div class="mx-6">
     <div class=" my-6 flex justify-between">
         <span class="text-3xl">product management</span>
-        <a href="/addProduct" class="btn_primary">Add product</a>
+        <a href="{{ route('addProduct') }}" class="btn_primary">Add product</a>
     </div>
 
     <table class="min-w-full table-auto border-collapse border border-gray-200">
@@ -43,30 +43,24 @@
         <tbody>
             @foreach ($products as $product)
                 <tr class="odd:bg-gray-100 even:bg-white hover:bg-gray-50">
-                    <td class="text-center border border-gray-300">{{ $product->ID }}</td>
+                    <td class="text-center border border-gray-300">{{ $product->products_id }}</td>
                     <td class="px-4 py-2 border border-gray-300">{{ $product->name }}</td>
                     <td class="px-4 py-2 border border-gray-300">{{ $product->price }}</td>
                     <td class="px-4 py-2 border border-gray-300">{{ $product->rating }}</td>
                     <td class="px-4 py-2 border border-gray-300">{{ $product->type }}</td>
                     <td class="px-4 py-2 border border-gray-300">
-                        <img src="{{ Storage::url($product->img) }}" alt="{{ $product->name }}" class="w-16 h-16 object-cover">
+                        <img src="{{ Storage::url($product->img) }}" alt="{{ $product->name }}"
+                            class="w-16 h-16 object-cover">
                     </td>
                     <td class="px-4 py-2 border border-gray-300">
                         <!-- Action buttons, for example: -->
-                        <a href="{{ route('editProduct',$product->ID) }}" class="bg-blue-500 text-white px-4 py-2 rounded">Edit</a>
-                        {{-- <form action="{{ route('products.destroy', $product->ID) }}" method="POST"
-                            onsubmit="return confirm('Are you sure?');">
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit" class="bg-red-500 text-white px-4 py-2 rounded">Delete</button>
-                        </form> --}}
-                        <a href="{{ route('hapusproduk', $product->ID) }}" class="bg-red-500 text-white px-4 py-2 rounded"
+                        <a href="{{ route('editProduct', $product->products_id) }}"
+                            class="bg-blue-500 text-white px-4 py-2 rounded">Edit</a>
+                        <a href="{{ route('hapusproduk', $product->products_id) }}"
+                            class="bg-red-500 text-white px-4 py-2 rounded"
                             onclick="return confirm('Apakah Anda yakin ingin menghapus produk ini?');">
                             Hapus
                         </a>
-
-
-
                     </td>
                 </tr>
             @endforeach

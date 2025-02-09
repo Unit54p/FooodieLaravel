@@ -71,3 +71,20 @@ div {
     color: var(--secondaryFont-color);
     /* Warna font biru saat focus */
 }
+
+.btn_mini {
+    text-align: center;
+    width: 15%;
+    height: fit-content;
+    background-color: var(--primary-color);
+    color: white;
+    cursor: pointer;
+    border-radius: 4px;
+    border: solid 1px var(--primary-color);
+
+}
+.btn_mini:hover{
+    background-color: white;
+    color: var(--primary-color);
+    border: solid 1px var(--primary-color);
+}

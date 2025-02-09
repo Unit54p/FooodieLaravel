@@ -11,9 +11,11 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\EditUserController;
 use App\Http\Controllers\addProductController;
 use App\Http\Controllers\AdminDashboardController;
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\UpdateProductController;
 use App\Http\Controllers\DestroyProductController;
 use App\Http\Controllers\UserOrderHistoryController;
+use App\Models\Cart;
 
 Route::get('/', [AuthController::class, 'showLoginForm'])->name('login');
 
@@ -26,7 +28,7 @@ Route::get('/login', function () {
 });
 
 Route::get('/Home', [ProductController::class, 'showProducts'])->middleware('auth')->name('home');
-Route::get('/foods', [ProductController::class, 'showFoods'])->middleware('auth')->name('foodsName');
+Route::get('/foods', [ProductController::class, 'showFoods'])->middleware('auth')->name('foodsView');
 Route::get('/drinks', [ProductController::class, 'showDrinks'])->middleware('auth')->name('drinks');
 
 Route::get('/about', function () {
@@ -43,24 +45,23 @@ Route::get('/userOrderHistory/{id}', [UserOrderHistoryController::class, 'userOr
 
 Route::get('/registration', [UserRegistration::class, 'registrationPage'])->name('registrationPage');
 
+Route::get('/cartView/{id}', [CartController::class, 'cartView'])->name('cartView')->middleware('auth');
+
+
+Route::middleware('auth')->group(function () {
+    Route::get('/cart', [CartController::class, 'cartView'])->name('cartView');
+    Route::post('/cart/add/{products_id}', [CartController::class, 'addToCart'])->name('addToCart');
+    // Route::delete('/cart/remove/{products_id}', [CartController::class, 'removeFromCart'])->name('removeFromCart');
+});
+
+
+
+
+
 
 /*
 ****** Router Admin ******
 */
-
-// Route::get('/Admin', function () {
-//     return view('Admin.adminHome');
-// })->middleware('auth');
-
-// Route::get('/logOut', function () {
-//     return view('Admin.logOut');
-// });
-
-// Route::get('/addProduct', function () {
-//     return view('Admin.addProduct'); // Pastikan view ada di resources/views/Admin/addProduct.blade.php
-// })->name('addProduct');
-
-// Route::get('/editProduct/{id}', [UpdateProductController::class, 'editView'])->name('editProduct')->middleware('auth');
 
 Route::middleware(['auth', 'admin'])->prefix('Admin')->group(function () {
     // Route::get('/', function () {
@@ -71,6 +72,7 @@ Route::middleware(['auth', 'admin'])->prefix('Admin')->group(function () {
     Route::get('/addProduct', function () {
         return view('Admin.addProduct');
     })->name('addProduct');
+
     Route::get('/editProduct/{id}', [UpdateProductController::class, 'editView'])->name('editProduct');
 
     Route::post('/saveProduct', [addProductController::class, 'saveProduct'])->name('saveProduct');

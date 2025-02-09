@@ -36,7 +36,16 @@
 }
 
 .card {
-    width: 300px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: black 0 0 10px 0.2px;
+    transform: translateY(-5px);
+}
+
+.hidden {
+    display: none;
 }
 
 .btn_keranjang {
@@ -45,6 +54,13 @@
     background-color: var(--secondaryFont-color);
     color: var(--primary-color);
     padding: 10px 40px;
+    border: solid 1px white;
+    transition: 0.2s ease;
+}
+
+.btn_keranjang:hover {
+    background-color: var(--primary-color);
+    color: white;
 }
 
 .cardCaption {

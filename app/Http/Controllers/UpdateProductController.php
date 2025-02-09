@@ -12,6 +12,7 @@ class UpdateProductController extends Controller
         $product = Product::find($id);
         return view('admin.editProduct', compact('product'));
     }
+
     public function UpdateProduct(Request $request, $id)
     {
         $request->validate([
@@ -36,6 +37,6 @@ class UpdateProductController extends Controller
 
         $product->save();
 
-        return redirect()->route('Admin.productManagement')->with('success', 'Produk berhasil diperbarui!');
+        return redirect()->route('productManagement')->with('success', 'Produk berhasil diperbarui!');
     }
 }

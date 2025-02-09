@@ -19,7 +19,7 @@
 @endif
 
 <div class="mx-5">
-    <form action="{{ route('saveEditProduct', $product->ID) }}" method="POST" enctype="multipart/form-data">
+    <form action="{{ route('saveEditProduct', $product->products_id) }}" method="POST" enctype="multipart/form-data">
         @csrf
         @method('PUT')
 

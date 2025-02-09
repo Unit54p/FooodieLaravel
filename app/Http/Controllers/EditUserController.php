@@ -16,44 +16,6 @@ class EditUserController extends Controller
         return view('UserSetting', compact('user')); // Kirim data ke view
     }
 
-    // public function saveUserSetting(Request $request, $id)
-    // {
-    //     $user = User::findOrFail($id); // Cari user berdasarkan id
-
-    //     $request->validate([
-    //         'name' => 'required|string|max:255',
-    //         'email' => 'required|email|max:255|unique:users,email,' . $user->id, // Gunakan id yang sesuai
-    //         'password' => 'nullable|string|min:8|confirmed',
-    //         'imageProfile' => 'nullable|image|mimes:jpg,jpeg,png|max:2048', // Pastikan nama input sesuai
-    //     ], [
-    //         'email.unique' => 'Email sudah digunakan, silakan gunakan email lain.',
-    //     ]);
-
-    //     // Update data user
-    //     $user->name = $request->name;
-    //     $user->email = $request->email;
-
-    //     if ($request->filled('password')) {
-    //         $user->password = Hash::make($request->password);
-    //     }
-
-    //     if ($request->hasFile('imageProfile')) {
-    //         // Hapus gambar lama jika ada
-    //         if ($user->imgProfile && Storage::disk('public')->exists(str_replace('storage/', '', $user->imgProfile))) {
-    //             Storage::disk('public')->delete(str_replace('storage/', '', $user->imgProfile));
-    //         }
-
-    //         // Simpan gambar ke dalam storage
-    //         $imagePath = $request->file('imageProfile')->store('img/userProfilePicture', 'public');
-
-    //         // Update path gambar di database
-    //         $user->imgProfile = 'storage/' . $imagePath;
-    //     }
-
-    //     $user->save(); // Simpan perubahan
-
-    //     return redirect()->route('editUserView', $user->id)->with('success', 'Profil berhasil diperbarui!');
-    // }
     public function saveUserSetting(Request $request, $id)
     {
         $user = User::findOrFail($id);
@@ -61,7 +23,7 @@ class EditUserController extends Controller
         // Validasi input pengguna
         $validated = $request->validate([
             'name' => 'required|string|max:255',
-            'email' => 'required|email|max:255|unique:users,email,' . $user->id,
+            'email' => 'required|email|max:255|unique:users,email,' . $user->user_id,
             'password' => 'nullable|string|min:8|confirmed',
             'imageProfile' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
         ], [
@@ -93,7 +55,6 @@ class EditUserController extends Controller
         $user->save();
 
         // Redirect dengan pesan sukses
-        return redirect()->route('editUserView', $user->id)->with('success', 'Profil berhasil diperbarui!');
+        return redirect()->route('editUserView', $user->user_id)->with('success', 'Profil berhasil diperbarui!');
     }
-
 }
