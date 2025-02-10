@@ -72,7 +72,7 @@
         <!-- Tombol Tambah ke Keranjang -->
         <form id="modalForm" action="" method="POST">
             @csrf
-            <button class="bg-blue-500 text-white px-4 py-2 rounded text-xl w-full mt-4">
+            <button class="btn_primary w-full mt-4">
                 Tambah ke Keranjang
             </button>
         </form>
