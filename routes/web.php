@@ -39,13 +39,12 @@ Route::get('/apps', function () {
     return view('apps');
 });
 
-Route::get('/editUserView{id}', [EditUserController::class, 'editUserView'])->name('editUserView')->middleware('auth');
+Route::get('/editUserView/{id}', [EditUserController::class, 'editUserView'])->name('editUserView')->middleware('auth');
 
 Route::get('/userOrderHistory/{id}', [UserOrderHistoryController::class, 'userOrderHistoryView'])->name('userOrderHistoryView');
 
 Route::get('/registration', [UserRegistration::class, 'registrationPage'])->name('registrationPage');
 
-Route::get('/cartView/{id}', [CartController::class, 'cartView'])->name('cartView')->middleware('auth');
 
 
 Route::middleware('auth')->group(function () {
@@ -53,7 +52,6 @@ Route::middleware('auth')->group(function () {
     Route::post('/cart/add/{products_id}', [CartController::class, 'addToCart'])->name('addToCart');
     // Route::delete('/cart/remove/{products_id}', [CartController::class, 'removeFromCart'])->name('removeFromCart');
 });
-
 
 
 

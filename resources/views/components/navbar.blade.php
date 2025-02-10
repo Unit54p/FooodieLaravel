@@ -1,4 +1,3 @@
-<link rel="stylesheet" href="{{ asset('css/AboutUs.css') }}">
 <nav class="px-10 py-5  flex justify-between align-middle ">
     <ul class="flex justify-start items-center">
         <li>
@@ -11,25 +10,29 @@
             <a class=" navLi {{ Request::is('drinks') ? 'active' : '' }}" href="/drinks">Drinks</a>
         </li>
         <li>
-            <a class="navLi {{ Request::is('apps') ? 'active' : '' }}"" href=" /apps">Apps</a>
+            <a class="navLi {{ Request::is('apps') ? 'active' : '' }}" href=" /apps">Apps</a>
         </li>
         <li>
-            <a class="navLi {{ Request::is('about') ? 'active' : '' }}"" href=" /about">About Us</a>
+            <a class="navLi {{ Request::is('about') ? 'active' : '' }}" href=" /about">About Us</a>
         </li>
     </ul>
 
-    <div class="flex justify-end flex-row userProfile gap-4 ">
+    <div class="flex justify-end flex-row userProfile gap-4">
         @auth
-            <button onclick="window.location='{{ route('cartView', Auth::user()->id)}}'" class="btn_img">
-                <img src="{{ asset('img/cart.svg') }}" alt="" class=" imgNavbar">
-            </button>
+        <button onclick="window.location='{{ route('cartView', Auth::user()->id)}}'" class="btn_img w-12 h-12 flex items-center justify-center rounded-lg
+            {{ Request::is('cart') ? 'btnImg_active' : '' }}">
+
+            <img src="{{ asset('img/cart.svg') }}" alt="" class="imgNavbar w-10 h-10">
+        </button>
         @endauth
         @auth
+        <button onclick="window.location='{{ route('editUserView', ['id' => Auth::user()->id]) }}'" class="btn_img w-12 h-12 flex items-center justify-center rounded-lg
+            {{ Route::currentRouteName() === 'editUserView' ? 'btnImg_active' : '' }}">
 
-            <button onclick="window.location='{{ route('editUserView', ['id' => Auth::user()->id]) }}'" style="width: 12%"
-                class="btn_img ">
-                <img src="{{ Storage::url(Auth::user()->imgProfile) }}" alt="Edit Profile" class="imgUser">
-            </button>
+            <img src="{{ Storage::url(Auth::user()->imgProfile) }}" alt="Edit Profile" class="imgNavbar w-10 h-10 object-cover rounded-full">
+        </button>
         @endauth
     </div>
+
+
 </nav>

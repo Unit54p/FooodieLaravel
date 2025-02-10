@@ -1,6 +1,6 @@
-<link rel="stylesheet" href="css/home.css">
-<link rel="stylesheet" href="css/navbar.css">
-<link rel="stylesheet" href="css/userSetting.css">
+<link rel="stylesheet" href="{{ asset('css/navbar.css') }}">
+
+
 @extends('layouts/layBas')
 
 @section('title', 'Fooodie Home')
@@ -14,31 +14,33 @@
 
 {{-- Menampilkan SweetAlert2 jika ada session sukses --}}
 @if(session('success'))
-    <script>
-        Swal.fire({
-            title: "Success!",
-            text: "{{ session('success') }}",
-            icon: "success",
-            confirmButtonText: "OK"
-        });
-    </script>
+<script>
+    Swal.fire({
+        title: "Success!"
+        , text: "{{ session('success') }}"
+        , icon: "success"
+        , confirmButtonText: "OK"
+    });
+
+</script>
 @endif
 
 {{-- Menampilkan SweetAlert2 jika ada error --}}
 @if($errors->any())
-    <script>
-        let errorMessages = "";
-        @foreach ($errors->all() as $error)
-            errorMessages += "{{ $error }}\n";
-        @endforeach
+<script>
+    let errorMessages = "";
+    @foreach($errors -> all() as $error)
+    errorMessages += "{{ $error }}\n";
+    @endforeach
 
-        Swal.fire({
-            title: "Error!",
-            text: errorMessages,
-            icon: "error",
-            confirmButtonText: "OK"
-        });
-    </script>
+    Swal.fire({
+        title: "Error!"
+        , text: errorMessages
+        , icon: "error"
+        , confirmButtonText: "OK"
+    });
+
+</script>
 @endif
 <div>
     <form action="{{ route('SaveUserSetting', $user->id) }}" enctype="multipart/form-data" method="POST" class="mt-12">
@@ -51,12 +53,10 @@
                     <img src="{{ Storage::url($user->imgProfile) }}" alt="" class="mb-3 w-fluid">
                     <div class="file-input-container">
                         <label for="image">Change Photo</label><br>
-                        <input type="file" name="image"
-                            class="file:mr-4 file:rounded-full file:border-0 file:bg-violet-50 file:px-4 file:py-2 file:text-sm file:font-semibold file:text-violet-700 hover:file:bg-violet-100 dark:file:bg-violet-600 dark:file:text-violet-100 dark:hover:file:bg-violet-500 ..." />
+                        <input type="file" name="image" class="file:mr-4 file:rounded-full file:border-0 file:bg-violet-50 file:px-4 file:py-2 file:text-sm file:font-semibold file:text-violet-700 hover:file:bg-violet-100 dark:file:bg-violet-600 dark:file:text-violet-100 dark:hover:file:bg-violet-500 ..." />
                     </div>
                     <div>
-                        <button type="button" class="btn_primary w-full"
-                            onclick="window.location.href='{{ route('userOrderHistoryView', ['id' => $user->id]) }}'">
+                        <button type="button" class="btn_primary w-full" onclick="window.location.href='{{ route('userOrderHistoryView', ['id' => $user->id]) }}'">
                             History
                         </button>
                     </div>
@@ -67,14 +67,12 @@
             <div class="flex justify-center flex-col gap-5 w-120">
                 <div class="form-group">
                     <label for="name">Name</label><br>
-                    <input type="text" id="name" name="name" value="{{ old('name', $user->name) }}"
-                        class="form-control inputField" required>
+                    <input type="text" id="name" name="name" value="{{ old('name', $user->name) }}" class="form-control inputField" required>
                 </div>
 
                 <div class="form-group">
                     <label for="email">Email</label><br>
-                    <input type="email" id="email" name="email" value="{{ old('email', $user->email) }}"
-                        class="inputField" required>
+                    <input type="email" id="email" name="email" value="{{ old('email', $user->email) }}" class="inputField" required>
                 </div>
 
                 <div class="form-group">
@@ -88,8 +86,7 @@
                 </div>
 
                 <button type="submit" class="btn_primary">Update Profile</button>
-                <button type="button" onclick="event.preventDefault(); document.getElementById('logout').submit();"
-                    class="btn_logOut">
+                <button type="button" onclick="event.preventDefault(); document.getElementById('logout').submit();" class="btn_logOut">
                     Log out
                 </button>
             </div>
