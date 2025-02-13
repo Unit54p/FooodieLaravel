@@ -26,6 +26,7 @@
 }
 
 .btn_img:hover {
+    cursor: pointer;
     border: solid 1px white;
 }
 .btnImg_active{

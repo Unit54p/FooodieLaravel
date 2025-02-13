@@ -86,7 +86,7 @@ Rooute aksi (CRUD)
 // create/add
 Route::post('/saveRegistration', [UserRegistration::class, 'saveRegistration'])->name('saveRegistration');
 // update/edit
-Route::put('/saveUserSetting{id}', [EditUserController::class, 'saveUserSetting'])->name('SaveUserSetting');
+Route::put('/saveUserSetting/{id}', [EditUserController::class, 'saveUserSetting'])->name('SaveUserSetting');
 // read
 // delete
 

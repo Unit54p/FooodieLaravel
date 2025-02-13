@@ -32,7 +32,6 @@
                         data-img="{{ Storage::url($product->img) }}" data-title="{{ $product->name }}"
                         data-rating="{{ $product->rating }}" data-price="Rp. {{ number_format($product->price, 0, ',', '.') }}"
                         data-url="{{ route('addToCart', ['products_id' => $product->products_id]) }}">
-
                         <div>
                             <img src="{{ Storage::url($product->img) }}" alt="" class="card_img w-full object-contain">
                         </div>
